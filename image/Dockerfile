@@ -12,8 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     wget -qO - "https://noire-731a2e.gitlab.io/commit-revision" && \
     wget -qO .python-version "https://noire-731a2e.gitlab.io/.python-version" && \
     wget -qO config.example.yaml "https://noire-731a2e.gitlab.io/config.example.yaml" && \
-    uv init --bare && uv sync && rm -rf /var/lib/apt/lists/* && \
-    rm -rf /tmp/factory
+    uv init --bare && uv sync && rm -rf /var/lib/apt/lists/*
 COPY --from=docker:dind \
     /usr/local/bin/docker /usr/local/bin/
 
